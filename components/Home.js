@@ -4,11 +4,12 @@ import NewsCard, { Category } from "./NewsCard";
 import { AnimeNewsContext } from "./context/context";
 import ScalableText from "react-native-text";
 import { scale } from "react-native-size-matters";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = ({ route }) => {
-    const { showModal, setShowModal, modalDetails, OpenURL, darkMode, animeNews, setAnimeNews, FetchAnimeNews } = useContext(AnimeNewsContext);
+    const { showModal, setShowModal, modalDetails, darkMode, animeNews, setAnimeNews, FetchAnimeNews } = useContext(AnimeNewsContext);
     const { category } = route.params || {};
-
+    const navigation = useNavigation();
     const dynamicStyles = {
         container: {
             backgroundColor: darkMode ? 'black' : '#9b59b6',
@@ -86,7 +87,9 @@ const HomeScreen = ({ route }) => {
                                     </ScalableText>
                                     <Button title="Read more" color={darkMode ? 'gray' : 'green'} onPress={() => {
                                         if (showModal) {
-                                            OpenURL(modalDetails.link);
+                                            navigation.navigate('WebScreen',{
+                                                url:modalDetails.link
+                                              })
                                         }
                                     }} />
                                     <Text style={{ textAlign: 'center', fontWeight: 'bold', color: darkMode ? 'white' : 'black' }}>Tap anywhere to close</Text>

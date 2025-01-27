@@ -6,7 +6,7 @@ import { scale } from "react-native-size-matters";
 import { FlatList } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 const NewsCard = (item) => {
-  const { showModal, setShowModal, setModalDetails, OpenURL, darkMode } = useContext(AnimeNewsContext);
+  const { showModal, setShowModal, setModalDetails, darkMode } = useContext(AnimeNewsContext);
   const navigation = useNavigation();
   const [timeDifference, setTimeDifference] = useState("");
   const dynamicStyles = StyleSheet.create({

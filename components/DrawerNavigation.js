@@ -7,6 +7,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Switch } from "react-native-gesture-handler";
 import { AnimeNewsContext } from "./context/context";
 import ScreenNavigator from "./ScreenNavigator";
+import CreditScreen from "./CreditScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -94,6 +95,11 @@ const DrawerNavigation = () => {
                 <Drawer.Screen component={ScreenNavigator} initialParams={{ category: 'Industry' }} name="Industry" options={{
                     drawerIcon: ({ focused }) => (
                         <Icon name="business" size={35} color={focused ? 'white' : 'black'} />
+                    )
+                }} />
+                <Drawer.Screen component={CreditScreen} name="Credits" options={{
+                    drawerIcon: ({ focused }) => (
+                        <Icon name="pizza" size={35} color={focused ? 'white' : 'black'} />
                     )
                 }} />
             </Drawer.Navigator>

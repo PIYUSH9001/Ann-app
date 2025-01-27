@@ -31,12 +31,6 @@ export const AnimeNewsProvider = (props) => {
             console.error("Error retrieving dark mode:", error);
         }
     };
-    const OpenURL = (url) => {
-        const isSupported = Linking.canOpenURL(url);
-        if (isSupported) {
-            Linking.openURL(url);
-        }
-    }
     const FetchAnimeNews = async () => {
         const parser = new XMLParser();
         try {
@@ -59,7 +53,6 @@ export const AnimeNewsProvider = (props) => {
                 setShowModal,
                 modalDetails,
                 setModalDetails,
-                OpenURL,
                 darkMode,
                 setDarkMode,
                 animeNews,
