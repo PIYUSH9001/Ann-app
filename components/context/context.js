@@ -13,22 +13,22 @@ export const AnimeNewsProvider = (props) => {
         try {
             let DarkModeValue = JSON.stringify(darkMode)
             DarkModeValue = await AsyncStorage.setItem("annDarkMode", DarkModeValue);
-            console.log("Dark mode saved:", DarkModeValue);
+            // console.log("Dark mode saved:", DarkModeValue);
         } catch (error) {
-            console.error("Error saving dark mode:", error);
+            // console.error("Error saving dark mode:", error);
         }
     };
     const getDarkMode = async () => {
         try {
             const value = await AsyncStorage.getItem("annDarkMode");
-            console.log("Retrieved dark mode value:", value);
+            // console.log("Retrieved dark mode value:", value);
             if (value !== null) {
                 setDarkMode(JSON.parse(value));
             } else {
                 setDarkMode(false); // Default to false
             }
         } catch (error) {
-            console.error("Error retrieving dark mode:", error);
+            // console.error("Error retrieving dark mode:", error);
         }
     };
     const FetchAnimeNews = async () => {

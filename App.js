@@ -4,6 +4,7 @@ import HomeScreen from "./components/Home";
 import DrawerNavigation from "./components/DrawerNavigation";
 import { AnimeNewsContext, AnimeNewsProvider } from "./components/context/context";
 import WebScreen from "./components/WebScreen";
+import RNSplashScreen from 'react-native-splash-screen';
 
 const App = () => {
     const { saveDarkMode, darkMode, getDarkMode } = useContext(AnimeNewsContext);
@@ -13,6 +14,7 @@ const App = () => {
         }
     }, [darkMode])
     useEffect(() => {
+        RNSplashScreen.hide();
         getDarkMode();
     },[])
     return (

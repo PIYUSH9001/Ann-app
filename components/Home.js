@@ -87,6 +87,7 @@ const HomeScreen = ({ route }) => {
                                     </ScalableText>
                                     <Button title="Read more" color={darkMode ? 'gray' : 'green'} onPress={() => {
                                         if (showModal) {
+                                            setShowModal(false);
                                             navigation.navigate('WebScreen',{
                                                 url:modalDetails.link
                                               })
